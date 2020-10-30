@@ -1,7 +1,7 @@
 import {
   BuilderContext,
   BuilderOutput,
-  createBuilder,
+  createBuilder
 } from '@angular-devkit/architect';
 import { NodeJsSyncHost } from '@angular-devkit/core/node';
 import firebaseBuild from './actions';
@@ -17,7 +17,7 @@ export function getFirebaseProjectName(
   target: string
 ): string | undefined {
   const rc: FirebaseRc = JSON.parse(
-    readFileSync(join(workspaceRoot, '.firebaserc'), 'UTF-8')
+    readFileSync(join(workspaceRoot, '.firebaserc'), 'utf-8')
   );
   const targets = rc.targets || {};
   const projects = Object.keys(targets || {});
@@ -64,20 +64,20 @@ export default createBuilder<any>(
     if (!options.prerender) {
       targets = [
         {
-          name: `${context.target.project}:build:production`,
+          name: `${context.target.project}:build:production`
         },
         {
           name: `${context.target.project}:server:production`,
           options: {
-            bundleDependencies: true,
-          },
-        },
+            bundleDependencies: true
+          }
+        }
       ];
     } else {
       targets = [
         {
-          name: `${context.target.project}:prerender`,
-        },
+          name: `${context.target.project}:prerender`
+        }
       ];
     }
 

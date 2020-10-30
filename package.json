@@ -5,38 +5,29 @@
   "builders": "./builders.json",
   "main": "index.js",
   "scripts": {
-    "build": "tsc && ts-node build.ts && cd dist && npm pack && cd .. && ts-node copy-tgz.ts"
+    "build": "tsc && ts-node build.ts && cd dist && npm pack"
   },
   "author": "",
-  "license": "no dc",
-  "peerDependencies": {
-    "@angular-devkit/architect": ">= 0.900 < 0.1100",
-    "@angular/common": "~10.2.0",
-    "@angular/core": "~10.2.0",
-    "@angular/platform-browser": "~10.2.0",
-    "@angular/platform-browser-dynamic": "~10.2.0",
-    "firebase": "^7.13.1",
-    "rxjs": "~6.6.0"
-  },
+  "license": "ISC",
   "devDependencies": {
+    "@types/node": "^14.14.6",
+    "fs-extra": "^9.0.1",
+    "node": "^15.0.1",
     "ts-node": "^8.3.0",
     "typescript": "~4.0.2"
   },
   "dependencies": {
     "@angular-devkit/architect": ">= 0.900 < 0.1100",
+    "@angular-devkit/build-angular": "^0.1002.0",
+    "@angular-devkit/schematics": "^10.2.0",
     "tslib": "^2.0.0"
   },
   "ngPackage": {
     "lib": {
       "umdModuleIds": {
-        "@angular/core": "ng",
-        "@angular/common": "ng",
-        "firebase/app": "firebase",
-        "tslib": "tslib",
-        "rxjs": "rxjs"
+        "tslib": "tslib"
       },
       "entryFile": "./public_api.ts"
-    },
-    "dest": "../build"
+    }
   }
 }
