@@ -1,0 +1,9 @@
+{
+  "builders": {
+    "build": {
+      "implementation": "./build/index.js",
+      "schema": "./build/schema.json",
+      "description": "run build for firebase ssr cloud functions"
+    }
+  }
+}

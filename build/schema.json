@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "id": "FirebaseBuildSchema",
+  "title": "Firebase Build",
+  "description": "Ng Build target options for Firebase.",
+  "properties": {
+    "buildTarget": {
+      "type": "string",
+      "description": "Target to build.",
+      "pattern": "^[^:\\s]+:[^:\\s]+(:[^\\s]+)?$"
+    }
+  }
+}
